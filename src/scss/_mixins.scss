@@ -17,3 +17,11 @@
    text-align: center;
    text-transform: uppercase;
 }
+
+@mixin title {
+   font-weight: 700;
+   font-size: 30px;
+   line-height: 40px;
+   text-transform: uppercase;
+   text-align: center;
+}
