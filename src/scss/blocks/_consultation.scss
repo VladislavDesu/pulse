@@ -1,0 +1,13 @@
+.consultation {
+   min-height: 680px;
+   color: #ffffff;
+   background-color: #211e1c;
+   background-image: url("../images/consultation.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+
+   &__wrapper {
+      @include wrapper;
+   }
+}
