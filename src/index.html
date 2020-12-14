@@ -2,16 +2,63 @@
 <html lang="ru">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <title>Document</title>
-   <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
-   <link rel="stylesheet" href="css/bootstrap-grid.min.css">
-   <link rel="stylesheet" href="css/styles.min.css">
+   <link rel="stylesheet" href="css/bootstrap-reboot.min.css" />
+   <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
+   <link rel="stylesheet" href="css/styles.min.css" />
 </head>
 
 <body>
+   <header class="header">
+      <div class="header__wrapper">
+         <div class="header__top">
+            <a class="header__logo" href="index.html">
+               <img src="icons/logo.png" width="251" height="45" alt="Бегай легко - укрепляй здоровье" />
+            </a>
 
+            <p class="header__delegate">
+               <span class="header__delegate-text">Официальный представитель</span>
+               <span class="header__delegate-text header__delegate-text--font">Garmin, Polar, Suunto</span>
+            </p>
+
+            <p class="header__phone">
+               <span>+7 (499) 922-89-74</span>
+               <a class="header__phone-btn" href="tel:74999228974">Заказать звонок</a>
+            </p>
+         </div>
+
+         <div class="header__promo promo">
+            <h1 class="promo__title">Подбор пульсометра</h1>
+
+            <p class="promo__text">С учётом вашего уровня подготовки</p>
+
+            <ul class="promo__list">
+               <li>
+                  <img class="promo__list-icon" src="icons/main_screen/timer.png" width="42" height="46" alt="Иконка часов" />
+                  <p class="promo__list-text">Время подбора: 10 минут</p>
+               </li>
+               <li>
+                  <img class="promo__list-icon" src="icons/main_screen/hand-cart.png" width="44" height="45" alt="Иконка тележки" />
+                  <p class="promo__list-text">Бесплатная доставка</p>
+               </li>
+
+               <li>
+                  <img class="promo__list-icon" src="icons/main_screen/messages.png" width="45" height="42" alt="Иконка сообщения" />
+                  <p class="promo__list-text">
+                     <span>Ответим</span>
+                     на все вопросы
+                  </p>
+               </li>
+            </ul>
+
+            <button class="promo__btn" type="button">Заказать консультацию</button>
+
+            <p class="promo__catalog-link">или <a href="#">перейти в каталог</a></p>
+         </div>
+      </div>
+   </header>
 </body>
 
 </html>
