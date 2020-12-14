@@ -108,15 +108,26 @@
 
       <section class="main__consultation consultation">
          <div class="consultation__wrapper">
-            <h2>Получите бесплатную консультацию по подбору пульсометра </h2>
+            <h2 class="consultation__title">Получите бесплатную консультацию<br> по подбору пульсометра</h2>
 
-            <p>Просто заполните форму заявки и мы перезвоним вам в течении 10 минут</p>
+            <p class="consultation__text">Просто заполните форму заявки<br> и мы перезвоним вам в течении 10 минут</p>
 
-            <form action="#" method="POST">
-               <input type="text">
-               <input type="text">
-               <input type="text">
-               <button type="submit">Заказать консультацию</button>
+            <form class="consultation__form" action="#" method="POST">
+               <p>
+                  <label class="hidden" for="consultation-name">Ваше Имя</label>
+                  <input id="consultation-name" type="text" placeholder="Ваше имя" required>
+               </p>
+
+               <p>
+                  <label class="hidden" for="consultation-tel">Ваш телефон</label>
+                  <input id="consultation-tel" type="number" placeholder="Ваш телефон" required>
+               </p>
+
+               <p>
+                  <label class="hidden" for="consultation-email">Ваша електронная почта</label>
+                  <input id="consultation-email" type="email" placeholder="Ваш E-mail" required>
+               </p>
+               <button class="consultation__btn" type="submit">Заказать консультацию</button>
             </form>
          </div>
       </section>
