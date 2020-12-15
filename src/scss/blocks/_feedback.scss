@@ -36,7 +36,7 @@
          margin-bottom: 3px;
          font-weight: 700;
          font-size: 18px;
-         color: #0d0d0d;
+         color: $dark-color;
       }
 
       &-count {
@@ -51,7 +51,7 @@
          font-size: 16px;
          line-height: 19px;
          font-weight: 300;
-         color: #0d0d0d;
+         color: $dark-color;
 
          & > p {
             margin-bottom: 20px;
