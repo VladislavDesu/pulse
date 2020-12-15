@@ -52,6 +52,13 @@
       }
    }
 
+   &__label {
+
+      &--hidden {
+         @include hidden;
+      }
+   }
+
    &__btn {
       @include btn;
       width: 100%;
