@@ -1,15 +1,14 @@
 .slider {
-   min-height: 656px;
-   padding-top: 108px;
-   padding-bottom: 20px;
-   text-align: center;
 
    &__wrapper {
       @include wrapper;
+      padding-top: 108px;
+      padding-bottom: 21px;
    }
 
    &__slide {
       position: relative;
+      text-align: center;
    }
 
    &__next,

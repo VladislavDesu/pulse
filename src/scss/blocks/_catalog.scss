@@ -1,8 +1,9 @@
 .catalog {
-   padding-top: 80px;
-   padding-bottom: 20px;
+   
    &__wrapper {
       @include wrapper;
+      padding-top: 80px;
+      padding-bottom: 20px;
    }
 
    &__title {
@@ -108,6 +109,13 @@
          position: relative;
          z-index: 1;
          display: none;
+      }
+
+      &-more-btn:hover,
+      &-back-btn:hover,
+      &-more-btn:focus,
+      &-back-btn:focus {
+         color: lighten($base-color, 15%);
       }
 
       &-more {
