@@ -6,6 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <title>Document</title>
    <link rel="stylesheet" href="css/bootstrap-reboot.min.css" />
+   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
    <link rel="stylesheet" href="css/styles.min.css" />
 </head>
 
@@ -24,7 +25,7 @@
 
             <p class="header__phone">
                <span>+7 (499) 922-89-74</span>
-               <a class="header__phone-btn" href="tel:74999228974">Заказать звонок</a>
+               <a data-modal="consultation" class="header__phone-btn" href="tel:74999228974">Заказать звонок</a>
             </p>
          </div>
 
@@ -53,9 +54,9 @@
                </li>
             </ul>
 
-            <button class="promo__btn" type="button">Заказать консультацию</button>
+            <button data-modal="consultation" class="promo__btn" type="button">Заказать консультацию</button>
 
-            <p class="promo__catalog-link">или <a href="#">перейти в каталог</a></p>
+            <p class="promo__catalog-link">или <a href="#catalog">перейти в каталог</a></p>
          </div>
       </div>
    </header>
@@ -111,7 +112,7 @@
 
             <p class="consultation__text">Просто заполните форму заявки<br> и мы перезвоним вам в течении 10 минут</p>
 
-            <form class="consultation__form" action="#" method="POST">
+            <form class="consultation__form">
                <p>
                   <label class="consultation__label consultation__label--hidden" for="consultation-name">Ваше Имя</label>
                   <input id="consultation-name" type="text" placeholder="Ваше имя" required>
@@ -132,43 +133,46 @@
       </section>
 
       <div class="main__slider slider">
-         <div class="slider__wrapper">
-            <div class="slider__slide">
-               <img src="images/slide_1.jpg" alt="пульсометр Polar">
-
-               <div>
-                  <button type="button" class="slider__prev"></button>
-                  <button type="button" class="slider__next"></button>
-               </div>
+         <div class="slider__wrapper swiper-container">
+            <div class="slider__inner swiper-wrapper">
+               <img class="slider__slide swiper-slide" src="images/slide_1.jpg" width="750" height="527" alt="пульсометр Polar">
+               <img class="slider__slide swiper-slide" src="images/slide_2.jpg" width="750" height="580" alt="пульсометр Polar">
+               <img class="slider__slide swiper-slide" src="images/slide_3.jpg" width="750" height="422" alt="пульсометр Polar">
             </div>
+
+            <button type="button" class="slider__prev"></button>
+            <button type="button" class="slider__next"></button>
          </div>
       </div>
 
-      <section class="main__catalog catalog">
+      <section id="catalog" class="main__catalog catalog">
          <div class="catalog__wrapper">
             <h2 class="catalog__title">Каталог пульсометров</h2>
 
             <div class="catalog__tabs">
-               <button class="catalog__tab" type="button"><span>Для фитнеса</span></button>
-               <button class="catalog__tab" type="button"><span>Для бега</span></button>
-               <button class="catalog__tab" type="button"><span>Для триатлона</span></button>
+               <button data-filter="fitness" class="catalog__tab" type="button" ><span>Для фитнеса</span></button>
+               <button data-filter="run" class="catalog__tab catalog__tab-run" type="button"><span>Для бега</span></button>
+               <button data-filter="triatlon" class="catalog__tab" type="button"><span>Для триатлона</span></button>
             </div>
 
             <ul class="catalog__list">
-               <li>
+               <li class="catalog__list-item catalog__list-item--active catalog__list-item-fitness">
                   <div class="catalog__list-info">
                      <img class="catalog__list-img" src="images/pulsometr.png" width="140" height="200" alt="Изображение пульсометра polar" >
                      <h3 class="catalog__list-title">Пульсометр Polar FT1</h3>
                      <p class="catalog__list-text">Для первых шагов в тренировках, основанных на сердечном ритме</p>
                      <a href="#" class="catalog__list-more-btn">Подробнее</a>
-                     <a href="#" class="catalog__list-back-btn">Назад</a>
+                     
+                     <div class="catalog__list-info-inner">
+                        <ul class="catalog__list-more">
+                           <li>Вы услышите звуковое оповещение о нужном пульсе во время тренировки;</li>
+                           <li>Вы увидите информативный графический индикатор целевых тренировочных зон пульса;.</li>
+                           <li>Также Вы увидите информацию о расходе калорий за тренировку;</li>
+                           <li>Вы сможете посмотреть данные по 10 тренировкам</li>
+                        </ul>
 
-                     <ul class="catalog__list-more">
-                        <li>Вы услышите звуковое оповещение о нужном пульсе во время тренировки;</li>
-                        <li>Вы увидите информативный графический индикатор целевых тренировочных зон пульса;.</li>
-                        <li>Также Вы увидите информацию о расходе калорий за тренировку;</li>
-                        <li>Вы сможете посмотреть данные по 10 тренировкам</li>
-                     </ul>
+                        <a href="#" class="catalog__list-back-btn">Назад</a>
+                     </div>
                   </div>
 
                   <div class="catalog__list-order">
@@ -181,20 +185,23 @@
                   </div>
                </li>
 
-               <li>
+               <li class="catalog__list-item catalog__list-item--active catalog__list-item-fitness">
                   <div class="catalog__list-info">
                      <img class="catalog__list-img" src="images/pulsometr.png" width="140" height="200" alt="Изображение пульсометра polar" >
                      <h3 class="catalog__list-title">Пульсометр Suunto M2</h3>
                      <p class="catalog__list-text">Пульсометр начального уровня с комфортным тканевым ремешком</p>
                      <a href="#" class="catalog__list-more-btn">Подробнее</a>
-                     <a href="#" class="catalog__list-back-btn">Назад</a>
 
-                     <ul class="catalog__list-more">
-                        <li>Вы услышите звуковое оповещение о нужном пульсе во время тренировки;</li>
-                        <li>Вы увидите информативный графический индикатор целевых тренировочных зон пульса;.</li>
-                        <li>Также Вы увидите информацию о расходе калорий за тренировку;</li>
-                        <li>Вы сможете посмотреть данные по 10 тренировкам</li>
-                     </ul>
+                     <div class="catalog__list-info-inner">
+                        <ul class="catalog__list-more">
+                           <li>Вы услышите звуковое оповещение о нужном пульсе во время тренировки;</li>
+                           <li>Вы увидите информативный графический индикатор целевых тренировочных зон пульса;.</li>
+                           <li>Также Вы увидите информацию о расходе калорий за тренировку;</li>
+                           <li>Вы сможете посмотреть данные по 10 тренировкам</li>
+                        </ul>
+
+                        <a href="#" class="catalog__list-back-btn">Назад</a>
+                     </div>
                   </div>
 
                   <div class="catalog__list-order">
@@ -207,20 +214,23 @@
                   </div>
                </li>
 
-               <li>
+               <li class="catalog__list-item catalog__list-item--active catalog__list-item-run">
                   <div class="catalog__list-info">
                      <img class="catalog__list-img" src="images/pulsometr.png" width="140" height="200" alt="Изображение пульсометра polar" >
                      <h3 class="catalog__list-title">Пульсометр Polar FT4</h3>
                      <p class="catalog__list-text">Улучшенная версия Polar FT1, имеющая следующие улучшения:</p>
                      <a href="#" class="catalog__list-more-btn">Подробнее</a>
-                     <a href="#" class="catalog__list-back-btn">Назад</a>
 
-                     <ul class="catalog__list-more">
-                        <li>Вы услышите звуковое оповещение о нужном пульсе во время тренировки;</li>
-                        <li>Вы увидите информативный графический индикатор целевых тренировочных зон пульса;.</li>
-                        <li>Также Вы увидите информацию о расходе калорий за тренировку;</li>
-                        <li>Вы сможете посмотреть данные по 10 тренировкам</li>
-                     </ul>
+                     <div class="catalog__list-info-inner">
+                        <ul class="catalog__list-more">
+                           <li>Вы услышите звуковое оповещение о нужном пульсе во время тренировки;</li>
+                           <li>Вы увидите информативный графический индикатор целевых тренировочных зон пульса;.</li>
+                           <li>Также Вы увидите информацию о расходе калорий за тренировку;</li>
+                           <li>Вы сможете посмотреть данные по 10 тренировкам</li>
+                        </ul>
+
+                        <a href="#" class="catalog__list-back-btn">Назад</a>
+                     </div>
                   </div>
 
                   <div class="catalog__list-order">
@@ -233,72 +243,81 @@
                   </div>
                </li>
 
-               <li>
+               <li class="catalog__list-item catalog__list-item--active catalog__list-item-triatlon">
                   <div class="catalog__list-info">
                      <img class="catalog__list-img" src="images/pulsometr.png" width="140" height="200" alt="Изображение пульсометра polar" >
-                     <h3 class="catalog__list-title">Пульсометр Polar FT4</h3>
-                     <p class="catalog__list-text">Улучшенная версия Polar FT1, имеющая следующие улучшения:</p>
+                     <h3 class="catalog__list-title">Пульсометр Polar FT1</h3>
+                     <p class="catalog__list-text">Для первых шагов в тренировках, основанных на сердечном ритме</p>
                      <a href="#" class="catalog__list-more-btn">Подробнее</a>
-                     <a href="#" class="catalog__list-back-btn">Назад</a>
 
-                     <ul class="catalog__list-more">
-                        <li>Вы услышите звуковое оповещение о нужном пульсе во время тренировки;</li>
-                        <li>Вы увидите информативный графический индикатор целевых тренировочных зон пульса;.</li>
-                        <li>Также Вы увидите информацию о расходе калорий за тренировку;</li>
-                        <li>Вы сможете посмотреть данные по 10 тренировкам</li>
-                     </ul>
+                     <div class="catalog__list-info-inner">
+                        <ul class="catalog__list-more">
+                           <li>Вы услышите звуковое оповещение о нужном пульсе во время тренировки;</li>
+                           <li>Вы увидите информативный графический индикатор целевых тренировочных зон пульса;.</li>
+                           <li>Также Вы увидите информацию о расходе калорий за тренировку;</li>
+                           <li>Вы сможете посмотреть данные по 10 тренировкам</li>
+                        </ul>
+
+                        <a href="#" class="catalog__list-back-btn">Назад</a>
+                     </div>
                   </div>
 
                   <div class="catalog__list-order">
                      <p class="catalog__list-price">
-                        <span class="catalog__list-price-old">7 390 руб.</span>
-                        <span class="catalog__list-price-current">7 021 руб.</span>
+                        <span class="catalog__list-price-old">4 750 руб.</span>
+                        <span class="catalog__list-price-current">4 500 руб.</span>
                      </p>
 
                      <button class="catalog__list-btn" type="button">Купить</button>
                   </div>
                </li>
 
-               <li>
+               <li class="catalog__list-item catalog__list-item--active catalog__list-item-run">
                   <div class="catalog__list-info">
                      <img class="catalog__list-img" src="images/pulsometr.png" width="140" height="200" alt="Изображение пульсометра polar" >
-                     <h3 class="catalog__list-title">Пульсометр Polar FT4</h3>
-                     <p class="catalog__list-text">Улучшенная версия Polar FT1, имеющая следующие улучшения:</p>
+                     <h3 class="catalog__list-title">Пульсометр Suunto M2</h3>
+                     <p class="catalog__list-text">Пульсометр начального уровня с комфортным тканевым ремешком</p>
                      <a href="#" class="catalog__list-more-btn">Подробнее</a>
-                     <a href="#" class="catalog__list-back-btn">Назад</a>
 
-                     <ul class="catalog__list-more">
-                        <li>Вы услышите звуковое оповещение о нужном пульсе во время тренировки;</li>
-                        <li>Вы увидите информативный графический индикатор целевых тренировочных зон пульса;.</li>
-                        <li>Также Вы увидите информацию о расходе калорий за тренировку;</li>
-                        <li>Вы сможете посмотреть данные по 10 тренировкам</li>
-                     </ul>
+                     <div class="catalog__list-info-inner">
+                        <ul class="catalog__list-more">
+                           <li>Вы услышите звуковое оповещение о нужном пульсе во время тренировки;</li>
+                           <li>Вы увидите информативный графический индикатор целевых тренировочных зон пульса;.</li>
+                           <li>Также Вы увидите информацию о расходе калорий за тренировку;</li>
+                           <li>Вы сможете посмотреть данные по 10 тренировкам</li>
+                        </ul>
+
+                        <a href="#" class="catalog__list-back-btn">Назад</a>
+                     </div>
                   </div>
 
                   <div class="catalog__list-order">
                      <p class="catalog__list-price">
-                        <span class="catalog__list-price-old">7 390 руб.</span>
-                        <span class="catalog__list-price-current">7 021 руб.</span>
+                        <span class="catalog__list-price-old">6 990 руб.</span>
+                        <span class="catalog__list-price-current">6 641 руб.</span>
                      </p>
 
                      <button class="catalog__list-btn" type="button">Купить</button>
                   </div>
                </li>
 
-               <li>
+               <li class="catalog__list-item catalog__list-item--active catalog__list-item-triatlon">
                   <div class="catalog__list-info">
                      <img class="catalog__list-img" src="images/pulsometr.png" width="140" height="200" alt="Изображение пульсометра polar" >
                      <h3 class="catalog__list-title">Пульсометр Polar FT4</h3>
                      <p class="catalog__list-text">Улучшенная версия Polar FT1, имеющая следующие улучшения:</p>
                      <a href="#" class="catalog__list-more-btn">Подробнее</a>
-                     <a href="#" class="catalog__list-back-btn">Назад</a>
 
-                     <ul class="catalog__list-more">
-                        <li>Вы услышите звуковое оповещение о нужном пульсе во время тренировки;</li>
-                        <li>Вы увидите информативный графический индикатор целевых тренировочных зон пульса;.</li>
-                        <li>Также Вы увидите информацию о расходе калорий за тренировку;</li>
-                        <li>Вы сможете посмотреть данные по 10 тренировкам</li>
-                     </ul>
+                     <div class="catalog__list-info-inner">
+                        <ul class="catalog__list-more">
+                           <li>Вы услышите звуковое оповещение о нужном пульсе во время тренировки;</li>
+                           <li>Вы увидите информативный графический индикатор целевых тренировочных зон пульса;.</li>
+                           <li>Также Вы увидите информацию о расходе калорий за тренировку;</li>
+                           <li>Вы сможете посмотреть данные по 10 тренировкам</li>
+                        </ul>
+
+                        <a href="#" class="catalog__list-back-btn">Назад</a>
+                     </div>
                   </div>
 
                   <div class="catalog__list-order">
@@ -399,27 +418,27 @@
       </div>
    </footer>
 
-   <div class="modal modal-consultation modal--none">
+   <div class="modal modal-consultation">
       <div class="overlay"></div>
 
       <div class="modal__wrapper">
          <h2 class="modal__title">Просто заполните форму заявки</h2>
          <p class="modal__text">и мы перезвоним вам в течении 10 минут</p>
    
-         <form class="modal__form" action="#" method="POST">
+         <form class="modal__form">
             <p>
-               <label class="modal__label modal__label--hidden" for="modal-name">Ваше Имя</label>
-               <input id="modal-name" type="text" placeholder="Ваше имя" required>
+               <label class="modal__label modal__label--hidden" for="modal-name-consultation">Ваше Имя</label>
+               <input id="modal-name-consultation" type="text" placeholder="Ваше имя" required>
             </p>
    
             <p>
-               <label class="modal__label modal__label--hidden" for="modal-tel">Ваш телефон</label>
-               <input id="modal-tel" type="number" placeholder="Ваш телефон" required>
+               <label class="modal__label modal__label--hidden" for="modal-tel-consultation">Ваш телефон</label>
+               <input id="modal-tel-consultation" type="number" placeholder="Ваш телефон" required>
             </p>
    
             <p>
-               <label class="modal__label modal__label--hidden" for="modal-email">Ваша електронная почта</label>
-               <input id="modal-email" type="email" placeholder="Ваш E-mail" required>
+               <label class="modal__label modal__label--hidden" for="modal-email-consultation">Ваша електронная почта</label>
+               <input id="modal-email-consultation" type="email" placeholder="Ваш E-mail" required>
             </p>
             <button class="modal__btn" type="submit">Заказать консультацию</button>
          </form>
@@ -428,27 +447,27 @@
       </div>
    </div>
 
-   <div class="modal modal-order modal--none">
+   <div class="modal modal-order">
       <div class="overlay"></div>
 
       <div class="modal__wrapper">
          <h2 class="modal__title">Ваш заказ:</h2>
          <p class="modal__text">Пульсометр Polar FT1</p>
    
-         <form class="modal__form" action="#" method="POST">
+         <form class="modal__form">
             <p>
-               <label class="modal__label modal__label--hidden" for="modal-name">Ваше Имя</label>
-               <input id="modal-name" type="text" placeholder="Ваше имя" required>
+               <label class="modal__label modal__label--hidden" for="modal-name-order">Ваше Имя</label>
+               <input id="modal-name-order" type="text" placeholder="Ваше имя" required>
             </p>
    
             <p>
-               <label class="modal__label modal__label--hidden" for="modal-tel">Ваш телефон</label>
-               <input id="modal-tel" type="number" placeholder="Ваш телефон" required>
+               <label class="modal__label modal__label--hidden" for="modal-tel-order">Ваш телефон</label>
+               <input id="modal-tel-order" type="number" placeholder="Ваш телефон" required>
             </p>
    
             <p>
-               <label class="modal__label modal__label--hidden" for="modal-email">Ваша електронная почта</label>
-               <input id="modal-email" type="email" placeholder="Ваш E-mail" required>
+               <label class="modal__label modal__label--hidden" for="modal-email-order">Ваша електронная почта</label>
+               <input id="modal-email-order" type="email" placeholder="Ваш E-mail" required>
             </p>
             <button class="modal__btn" type="submit">Купить</button>
          </form>
@@ -457,7 +476,7 @@
       </div>
    </div>
 
-   <div class="modal modal-thanks modal--none">
+   <div class="modal modal-thanks">
       <div class="overlay"></div>
 
       <div class="modal__wrapper">
@@ -467,6 +486,11 @@
       </div>
    </div>
 
+   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+   <script src="js/slider.js"></script>
+   <script type="module" src="js/tab.js"></script>
+   <script type="module" src="js/catalog.js"></script>
+   <script type="module" src="js/popup.js"></script>
 </body>
 
 </html>
