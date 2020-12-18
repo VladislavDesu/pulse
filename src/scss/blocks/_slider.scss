@@ -2,13 +2,9 @@
 
    &__wrapper {
       @include wrapper;
+      position: relative;
       padding-top: 108px;
       padding-bottom: 21px;
-   }
-
-   &__slide {
-      position: relative;
-      text-align: center;
    }
 
    &__next,
@@ -16,7 +12,8 @@
       position: absolute;
       top: 50%;
       right: 0;
-      width: 35px;
+      z-index: 1;
+      width: 60px;
       height: 60px;
       padding: 0;
       border: none;
