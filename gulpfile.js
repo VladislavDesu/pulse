@@ -12,7 +12,9 @@ var paths = {
       src: "src/scss/**/*.scss",
       dest: "src/css",
    },
-   html: "src/**/*.html"
+   html: "src/**/*.html",
+   js: "src/js/**/*.js",
+   build: "docs/"
 };
 
 gulp.task("scss", () => {
@@ -38,5 +40,3 @@ gulp.task("server", () => {
    gulp.watch(paths.styles.src, gulp.series("scss"));
    gulp.watch(paths.html).on("change", serve.reload);
 });
-
-gulp.task("default", gulp.series(["server", "scss"]));
