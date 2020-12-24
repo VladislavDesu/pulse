@@ -1,0 +1,178 @@
+@media(max-width: 991px) {
+   .catalog {
+
+      &__list {
+         justify-content: space-around;
+      }
+   }
+
+   .feedback {
+
+      &__list {
+         
+         & > li {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+         }
+
+         &-img {
+            margin-right: 0;
+            margin-bottom: 20px;
+         }
+
+         &-quote {
+            max-width: 660px;
+            width: 100%;
+            margin: 0 auto;
+         }
+      }
+   }
+}
+
+@media(max-width: 767px) {
+   .header {
+      &__top {
+         flex-wrap: wrap;
+      }
+
+      &__phone {
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin-left: 0;
+         margin-top: 30px;
+      }
+   }
+
+   .promo {
+      justify-content: center;
+      align-items: center;
+      max-width: none;
+   }
+
+   .advantages {
+      &__list {
+         flex-wrap: wrap;
+         justify-content: space-around;
+
+         & > li {
+            margin-bottom: 10px;
+         }
+      }
+   }
+
+   .consultation {
+      &__wrapper {
+         max-width: none;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      }
+
+      &__title {
+         text-align: center;
+      }
+   }
+
+   .catalog {
+      &__tabs {
+         flex-direction: column;
+         align-items: center;
+      }
+
+      &__tab {
+         margin-bottom: 20px;
+      }
+
+      .catalog {
+         &__list {
+            &-item {
+               margin-right: 0;
+            }
+         }
+      }
+   }
+
+   .footer {
+      &__info {
+         margin: 0;
+         margin-left: auto;
+      }
+   }
+}
+
+@media(max-width: 575px) {
+   .header {
+      
+      &__top {
+         justify-content: center;
+         align-items: center;
+      }
+
+      &__delegate {
+         display: none;
+      }
+   }
+
+   .promo {
+      &__title {
+         font-size: 35px;
+         text-align: center;
+      }
+
+      &__text {
+         text-align: center;
+      }
+
+      &__list {
+         flex-wrap: wrap;
+         
+         & > li {
+            margin-right: 0;
+            width: 100%;
+            margin-bottom: 20px;
+         }
+      }
+
+      &__btn {
+         font-size: 14px;
+      }
+   }
+   
+   .consultation {
+      &__title {
+         font-size: 18px;
+         text-align: left;
+      }
+   }
+
+   .modal {
+      &__wrapper {
+         max-width: none;
+         height: 100%;
+      }
+
+      &__btn {
+         max-width: none;
+         width: 100%;
+         &-close {
+            top: 30px;
+            right: 35px;
+         }
+      }
+
+      &__title {
+         white-space: normal;
+      }
+   }
+
+   .footer {
+      &__wrapper {
+         display: flex;
+         justify-content: flex-end;
+         align-items: flex-end;
+      }
+   }
+}
