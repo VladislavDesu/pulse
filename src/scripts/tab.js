@@ -1,5 +1,5 @@
 function catalogFilter(filter) {
-   catalogListItems.forEach((item) => {
+   catalogListItem.forEach((item) => {
       if (!item.classList.contains(`catalog__list-item-${filter}`)) {
          item.classList.remove("catalog__list-item--active");
       } else {
@@ -8,12 +8,11 @@ function catalogFilter(filter) {
    })
 };
 
-const catalog = document.querySelector(".catalog");
-const catalogTabs = catalog.querySelector(".catalog__tabs");
+const catalogContainer = document.querySelector(".catalog");
+const catalogTabs = catalogContainer.querySelector(".catalog__tabs");
 const tabsList = catalogTabs.querySelectorAll(".catalog__tab");
-const catalogList = catalog.querySelector(".catalog__list");
-const catalogListItems = catalogList.querySelectorAll(".catalog__list-item");
-
+const catalogLists = catalogContainer.querySelector(".catalog__list");
+const catalogListItem = catalogLists.querySelectorAll(".catalog__list-item");
 
 tabsList.forEach((tab) => {
       tab.addEventListener("click", () => {
